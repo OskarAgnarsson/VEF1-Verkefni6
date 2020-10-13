@@ -1,2 +1,51 @@
 // Sækja config
+@import './config';
 // Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $darkgray;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: $darkgray;
+}
+
+button {
+  background-color: $darkgray;
+  border: 1px solid $black;
+  border-radius: 5px;
+  color: $verylightgray;
+  padding: 0.5rem;
+  transition: color $transition, background-color $transition;
+  word-break: initial;
+}
+
+button:hover {
+  background-color: $verylightgray;
+  color: $darkgray;
+}
+
+button:active {
+  background-color: $darkgray;
+  border: 1px solid $black;
+  color: $verylightgray;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montaga', Georgia, serif;
+}
+
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+}

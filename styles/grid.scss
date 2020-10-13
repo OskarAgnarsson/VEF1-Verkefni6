@@ -1,4 +1,64 @@
 // Sækja config
 @import './config';
 
-// Hér skal nota scss @for til að ítra út klösum fyrir grid
+.grid {
+  margin: 0 auto;
+  max-width: 1400px;
+  overflow: hidden;
+}
+
+.row {
+  display: -webkit-box;/* stylelint-disable-line */
+  display: -ms-flexbox;/* stylelint-disable-line */
+  display: flex;
+  -ms-flex-wrap: wrap;/* stylelint-disable-line */
+  flex-wrap: wrap;
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+}
+
+.col {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  width: 100%;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include columns($i);
+  }
+}
+
+@for $i from 1 through 3 {
+  .offset-col-#{$i} {
+    @include offset($i);
+  }
+}
+
+@media (max-width: 799px) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      @include columns($i);
+    }
+  }
+
+  @for $i from 1 through 3 {
+    .offset-col-md-#{$i} {
+      @include offset($i);
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      @include columns($i);
+    }
+  }
+
+  @for $i from 1 through 3 {
+    .offset-col-sm-#{$i} {
+      @include offset($i);
+    }
+  }
+}

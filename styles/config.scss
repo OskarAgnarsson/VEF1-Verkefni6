@@ -1,3 +1,22 @@
 // Hér eiga að vera stillingar með scss breytum fyrir:
 // grid, max-width á síðu, transitions,
 // liti, margin-bottom gildi sem eru sameiginleg
+
+$black: #000;
+$bottom1: 1rem;
+$bottom2: 2rem;
+$darkgray: #222;
+$gray: #999;
+$gutter: 20px;
+$lightgray: #ccc;
+$max-width: 1400px;
+$transition: 300ms ease-in-out;
+$verylightgray: #eee;
+
+@mixin columns($col: 1) {
+  width: ($col / 12 * 100) * 1%;
+}
+
+@mixin offset($col: 1) {
+  margin-left: ($col / 12 * 100) * 1%;
+}
